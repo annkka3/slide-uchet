@@ -1,0 +1,16 @@
+{
+  "name": "Слайд-учёт",
+  "short_name": "Слайд-учёт",
+  "description": "Трекер заданий по инфографике: этапы утверждения, резерв готовых слайдов и недельный отчёт.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EEF1F6",
+  "theme_color": "#D8386B",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
