@@ -1,7 +1,7 @@
 /* Service worker: keeps the app shell on the device so it opens without internet.
    Page and scripts: network first (updates arrive at once), cache when offline or slow.
    Libraries, icons, fonts: cache first. Firebase traffic is never touched. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'shell-' + VERSION;
 const CORE = [
   './', 'index.html', 'config.js', 'store.js', 'manifest.webmanifest',

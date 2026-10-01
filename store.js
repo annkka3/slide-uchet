@@ -28,10 +28,22 @@ if (!cfg) {
 
     const report = e => {
       console.error(e);
+      if (window.__onWriteError) window.__onWriteError((e && e.code) || 'error');
       if (window.__toast) {
         window.__toast('Не сохранилось: ' + (e && e.code === 'permission-denied'
           ? 'нет доступа, проверь правила Firestore' : ((e && e.code) || 'ошибка')));
       }
+    };
+
+    // Self-check for the «Проверить связь с базой» menu item: who is signed in and what the server holds.
+    window.__diag = async () => {
+      const u = auth.currentUser;
+      const out = { email: u && u.email, uid: u && u.uid, projectId: cfg.projectId };
+      if (!u) { out.error = 'not-signed-in'; return out; }
+      const col = fsMod.collection(fs, 'users/' + u.uid + '/tasks');
+      try { out.serverTasks = (await fsMod.getDocsFromServer(col)).size; } catch (e) { out.error = (e && e.code) || String(e); }
+      try { out.cachedTasks = (await fsMod.getDocsFromCache(col)).size; } catch (e) { out.cacheError = (e && e.code) || String(e); }
+      return out;
     };
     const wrap = d => ({ id: d.id, exists: d.exists(), data: () => d.data() });
 

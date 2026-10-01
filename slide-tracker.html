@@ -1,20 +1,5 @@
-<!doctype html>
-<html lang="ru">
-<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Слайд-учёт</title>
-<meta name="description" content="Трекер заданий по инфографике: этапы утверждения, резерв готовых слайдов и недельный отчёт.">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#12161F" media="(prefers-color-scheme: dark)">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Слайд-учёт">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap">
@@ -73,16 +58,14 @@
   --cat-lilac-bg:#37243E; --cat-lilac-fg:#E1B3ED; --cat-gray-bg:#2C3445; --cat-gray-fg:#B7C0D3;
 }
 
-:root{color-scheme:light dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-img{max-width:100%}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 h1,h2,h3{text-wrap:balance}
-.app{max-width:1120px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 14px 96px}
+.app{max-width:1120px;margin:0 auto;padding:14px 14px 96px}
 @media (min-width:720px){.app{padding:24px 24px 64px}}
 
 /* header */
@@ -218,8 +201,6 @@ h1,h2,h3{text-wrap:balance}
 .banner{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:14px;background:var(--ok-soft);color:var(--ok-ink);margin-bottom:12px;flex-wrap:wrap}
 .banner .big{font-family:"Unbounded","Golos Text",sans-serif;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
 .banner .txt{font-size:13px}
-.banner.bad{background:var(--bad-soft);color:var(--bad-ink);display:block;line-height:1.45;font-size:13px}
-.banner.bad b{display:block;font-size:14px;margin-bottom:2px}
 
 .empty{padding:36px 18px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px;font-size:14px;line-height:1.5}
 .empty b{color:var(--ink);font-weight:600}
@@ -331,31 +312,13 @@ dialog form{background:var(--surface);color:var(--ink);border-radius:18px;paddin
 .imp-row span{color:var(--muted);font-size:12px}
 .imp-step{display:grid;gap:12px}
 
-/* menu */
-.menu-wrap{position:relative}
-.menu{position:absolute;right:0;top:calc(100% + 6px);min-width:240px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;z-index:15;display:grid}
-@media (max-width:719px){.menu{position:fixed;left:14px;right:14px;top:auto;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30}}
-.mi{border:0;background:none;text-align:left;padding:10px 10px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink)}
-.mi:hover{background:var(--surface-2)}
-.menu-sep{height:1px;background:var(--line);margin:4px 0}
-.menu-acc{padding:6px 10px 2px;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
-
-/* sign-in */
-.auth{position:fixed;inset:0;background:var(--bg);z-index:50;display:grid;place-items:center;padding:20px;overflow:auto}
-.auth-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;width:min(380px,100%);display:grid;gap:12px;box-shadow:var(--shadow)}
-.auth-card h2{font-family:"Unbounded","Golos Text",sans-serif;margin:0;font-size:20px;font-weight:700}
-.auth-err{color:var(--bad);font-size:13px;margin:0}
-.auth-ok{color:var(--ok-ink);font-size:13px;margin:0}
-.auth-card .link{justify-self:start}
-
 /* toast */
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--btn-ink);color:var(--btn-ink-text);padding:10px 14px;border-radius:12px;font-size:14px;display:flex;align-items:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:calc(100vw - 32px);box-shadow:var(--shadow)}
 .toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 .toast .tbtn{border:0;background:transparent;color:var(--accent);font-weight:700;padding:0;white-space:nowrap}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
-</head>
-<body>
+
 <div class="app" id="app">
   <header class="top">
     <div class="brand">
@@ -364,19 +327,9 @@ dialog form{background:var(--surface);color:var(--ink);border-radius:18px;paddin
     </div>
     <div class="top-right">
       <span class="sync" id="sync"><span class="dot"></span><span class="txt">подключаюсь…</span></span>
-      <div class="menu-wrap">
-        <button class="btn" id="menuBtn" aria-haspopup="true" aria-expanded="false">Меню</button>
-        <div class="menu" id="menu" hidden>
-          <button class="mi" id="catsBtn">Категории</button>
-          <button class="mi" id="impBtn">Импорт заданий</button>
-          <button class="mi" id="expBtn">Резервная копия в файл</button>
-          <button class="mi" id="clearEx" hidden>Удалить примеры</button>
-          <button class="mi" id="diagBtn" hidden>Проверить связь с базой</button>
-          <div class="menu-sep" id="accSep" hidden></div>
-          <div class="menu-acc" id="accEmail" hidden></div>
-          <button class="mi" id="signOutBtn" hidden>Выйти из аккаунта</button>
-        </div>
-      </div>
+      <button class="link" id="catsBtn">Категории</button>
+      <button class="link" id="impBtn">Импорт</button>
+      <button class="link" id="clearEx" hidden>Удалить примеры</button>
       <button class="btn accent add-desktop" id="addBtn">+ Задание</button>
     </div>
   </header>
@@ -537,9 +490,9 @@ dialog form{background:var(--surface);color:var(--ink);border-radius:18px;paddin
       <button type="button" class="btn icon ghost" data-close-imp aria-label="Закрыть">✕</button>
     </div>
     <div class="imp-step" id="impStep1">
-      <p class="dlg-text">Выбери файл Excel или CSV, либо вставь ниже строки из таблицы или текст сообщения из чата — по одному заданию на строку. Шапку с названиями колонок распознаю сама, из текста вытащу артикул, слайды, срок и категорию. Сюда же загружается резервная копия в формате .json.</p>
+      <p class="dlg-text">Выбери файл Excel или CSV, либо вставь ниже строки из таблицы или текст сообщения из чата — по одному заданию на строку. Шапку с названиями колонок распознаю сама, из текста вытащу артикул, слайды, срок и категорию.</p>
       <div class="file-row">
-        <input type="file" id="impFile" accept=".xlsx,.xls,.csv,.txt,.tsv,.json" hidden>
+        <input type="file" id="impFile" accept=".xlsx,.xls,.csv,.txt,.tsv" hidden>
         <button type="button" class="btn" id="impFileBtn">Выбрать файл…</button>
         <span class="fname" id="impFileName"></span>
       </div>
@@ -563,23 +516,8 @@ dialog form{background:var(--surface);color:var(--ink);border-radius:18px;paddin
     </div>
   </form>
 </dialog>
-<div class="auth" id="auth" hidden>
-  <form class="auth-card" id="authForm" novalidate>
-    <h2>Слайд-учёт</h2>
-    <p class="dlg-text">Войди, чтобы задания синхронизировались между телефоном и компьютером. Если аккаунта ещё нет, введи почту, придумай пароль и нажми «Создать аккаунт».</p>
-    <label class="f"><span>Почта</span><input name="email" type="email" autocomplete="username" inputmode="email"></label>
-    <label class="f"><span>Пароль</span><input name="password" type="password" autocomplete="current-password"></label>
-    <p class="auth-err" id="authErr" hidden></p>
-    <p class="auth-ok" id="authOk" hidden></p>
-    <button type="submit" class="btn accent" id="authIn">Войти</button>
-    <button type="button" class="btn" id="authUp">Создать аккаунт</button>
-    <button type="button" class="link" id="authReset">Забыла пароль</button>
-  </form>
-</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="config.js"></script>
-<script>window.__dbReady=new Promise(function(r){window.__resolveDb=r});</script>
 <script>
 (function(){
 'use strict';
@@ -658,10 +596,7 @@ function fmtShort(s){if(!s)return '';const d=parse(s);return `${d.getDate()} ${M
 const newId=()=>(crypto.randomUUID?crypto.randomUUID():'t'+Date.now().toString(36)+Math.random().toString(36).slice(2,8));
 
 /* state */
-/* CLOUD: a Firebase config is present, data lives in Firestore under the signed-in user.
-   Otherwise the app keeps everything in this browser only. */
-const CLOUD=!!window.FIREBASE_CONFIG;
-let tasks=[],db=null,loaded=false,dbState='connecting',fsPending=false,pendingSince=0,dbError='';
+let tasks=[],db=null,loaded=false;
 let categories=null,catColors={};
 let groupMode='urgency',sortMode='urgency',openSwatch=null;
 let filterStages=new Set(),filterCats=new Set(),filtersOpen=false;
@@ -758,19 +693,11 @@ async function flush(){
   updateSync();
 }
 function updateSync(){
-  if(!CLOUD)return;
-  if(navigator.onLine===false)setSync('pending','нет интернета · изменения сохраняются на устройстве');
-  else if(dbState==='connecting')setSync('cache','подключаюсь…');
-  else if(!db)setSync('pending','нет связи с сервером · изменения сохраняются на устройстве');
-  else if(outbox.length||fsPending)setSync('pending','отправляю изменения…');
+  if(!db)return;
+  if(navigator.onLine===false)setSync('pending',`нет интернета · ${outbox.length?cnt(outbox.length,'changes')+' сохранено на устройстве':'изменения сохранятся на устройстве'}`);
+  else if(outbox.length)setSync('pending',`не отправлено: ${cnt(outbox.length,'changes')} · повторю автоматически`);
   else setSync('on','синхронизируется между устройствами');
 }
-/* Firestore reports whether local writes are still waiting for the server */
-window.__onPending=p=>{
-  if(p&&!fsPending)pendingSince=Date.now();
-  if(!p&&fsPending&&Date.now()-pendingSince>4000)toast('Все изменения отправлены');
-  fsPending=!!p;updateSync();
-};
 window.addEventListener('online',()=>{updateSync();flush()});
 window.addEventListener('offline',updateSync);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)flush()});
@@ -778,18 +705,18 @@ function persist(n){
   const i=tasks.findIndex(t=>t.id===n.id);
   if(i>=0)tasks[i]=n;else tasks.push(n);
   render();
-  if(CLOUD){const body=Object.assign({},n);delete body.id;queueWrite('set','tasks/'+n.id,body)}
+  if(db){const body=Object.assign({},n);delete body.id;queueWrite('set','tasks/'+n.id,body)}
   else saveLocal();
 }
 function persistMany(list){
   list.forEach(n=>{const i=tasks.findIndex(t=>t.id===n.id);if(i>=0)tasks[i]=n;else tasks.push(n)});
   render();
-  if(CLOUD)list.forEach(n=>{const body=Object.assign({},n);delete body.id;queueWrite('set','tasks/'+n.id,body)});
+  if(db)list.forEach(n=>{const body=Object.assign({},n);delete body.id;queueWrite('set','tasks/'+n.id,body)});
   else saveLocal();
 }
 function removeTask(id){
   tasks=tasks.filter(t=>t.id!==id);render();
-  if(CLOUD)queueWrite('delete','tasks/'+id);
+  if(db)queueWrite('delete','tasks/'+id);
   else saveLocal();
 }
 function catList(){return (categories&&categories.length)?categories.slice():DEFAULT_CATS.slice()}
@@ -799,7 +726,7 @@ function saveCats(list,colors){
   categories=list.length?list:null;
   if(colors)catColors=colors;
   const body={list,colors:catColors};
-  if(CLOUD)queueWrite('set','settings/categories',body);
+  if(db)queueWrite('set','settings/categories',body);
   else{try{localStorage.setItem(CATS_KEY,JSON.stringify(body))}catch(e){}}
 }
 function hashStr(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
@@ -814,100 +741,32 @@ function setSync(state,text){const el=$('#sync');el.className='sync '+state;el.q
 
 async function init(){
   bind();
-  if(!CLOUD){
-    loadLocal();loaded=true;setSync('off','данные только на этом устройстве');render();return;
-  }
   const cached=loadCache();
-  if(cached){tasks=overlayTasks(tasks);loaded=true}
-  updateSync();render();
+  if(cached){tasks=overlayTasks(tasks);loaded=true;setSync('cache','показываю сохранённое, подключаюсь…')}
+  render();
   let cap=null;
-  try{cap=await window.__dbReady}catch(e){cap=null}
-  if(!cap){dbState='failed';loaded=true;updateSync();render();return}
-  db=cap;dbState='ready';
-  db.collection('tasks').onSnapshot(snap=>{
-    tasks=overlayTasks(snap.docs.filter(d=>d.exists).map(d=>Object.assign({id:d.id},d.data())));
-    loaded=true;saveCache();updateSync();render();
-  },err=>{
-    dbError=(err&&err.code)||'ошибка';loaded=true;setSync('pending','не удалось получить данные: '+dbError);render();
-  });
-  window.__onWriteError=code=>{if(code==='permission-denied'){dbError=code;render()}};
-  db.doc('settings/categories').onSnapshot(snap=>{
-    const d=pendingCats()||(snap.exists?snap.data():null);
-    categories=d&&Array.isArray(d.list)&&d.list.length?d.list.map(String):null;
-    catColors=d&&d.colors&&typeof d.colors==='object'?d.colors:{};
-    saveCache();render();if($('#dlg').open)renderCatChips();
-  },()=>{});
-  flush();
-}
-
-/* sign-in screen and account menu (cloud mode only); store.js calls __onAuth */
-window.__onAuth=user=>{
-  const a=$('#auth');
-  if(user){a.hidden=true;$('#accEmail').textContent=user.email||'';['#accEmail','#accSep','#signOutBtn','#diagBtn'].forEach(q=>{$(q).hidden=false})}
-  else if(user===null){a.hidden=false}
-};
-const AUTH_ERR={'auth/invalid-credential':'Неверная почта или пароль.','auth/wrong-password':'Неверная почта или пароль.','auth/user-not-found':'Аккаунта с такой почтой нет. Нажми «Создать аккаунт».','auth/invalid-email':'Проверь адрес почты.','auth/missing-password':'Введи пароль.','auth/weak-password':'Пароль слишком короткий, нужно минимум 6 символов.','auth/email-already-in-use':'Аккаунт с этой почтой уже есть. Нажми «Войти».','auth/too-many-requests':'Слишком много попыток. Подожди несколько минут.','auth/network-request-failed':'Нет связи с сервером. Проверь интернет.','auth/operation-not-allowed':'Вход по почте и паролю не включён в настройках Firebase.'};
-function authMsg(e){const c=String((e&&e.code)||'');if(c.startsWith('auth/api-key-not-valid')||c==='auth/configuration-not-found')return 'Приложение ещё не подключено к Firebase: проверь настройки в config.js и что вход по почте включён.';return AUTH_ERR[c]||('Не получилось: '+(c||'ошибка'))}
-async function authRun(kind){
-  const f=$('#authForm'),err=$('#authErr'),ok=$('#authOk');err.hidden=true;ok.hidden=true;
-  const email=f.email.value.trim(),pw=f.password.value;
-  if(!window.__auth){err.textContent='Модуль входа ещё загружается. Попробуй через пару секунд.';err.hidden=false;return}
-  if(!email){err.textContent='Введи почту.';err.hidden=false;f.email.focus();return}
-  if(kind!=='reset'&&!pw){err.textContent='Введи пароль.';err.hidden=false;f.password.focus();return}
-  try{
-    if(kind==='in')await window.__auth.signIn(email,pw);
-    else if(kind==='up')await window.__auth.signUp(email,pw);
-    else{await window.__auth.reset(email);ok.textContent='Письмо для сброса пароля отправлено на '+email+'.';ok.hidden=false}
-  }catch(e){err.textContent=authMsg(e);err.hidden=false}
-}
-async function runDiag(){
-  if(!window.__diag){alert('Модуль хранилища не загрузился. Проверь интернет и обнови страницу.');return}
-  let d;try{d=await window.__diag()}catch(e){d={error:String(e&&e.code||e)}}
-  const lines=[`Проект: ${d.projectId||'?'}`,`Аккаунт: ${d.email||'вход не выполнен'}`];
-  if(d.error==='not-signed-in')lines.push('Нужно войти.');
-  else if(d.error==='permission-denied')lines.push('Сервер: нет доступа. Правила Firestore не опубликованы или не совпадают.');
-  else if(d.error)lines.push(`Сервер: ошибка ${d.error}`);
-  else lines.push(`Заданий на сервере: ${d.serverTasks}`);
-  if(d.cachedTasks!=null)lines.push(`Заданий в памяти устройства: ${d.cachedTasks}`);
-  lines.push(`Показано в приложении: ${tasks.length}`,`Интернет: ${navigator.onLine?'есть':'нет'}`);
-  alert(lines.join('\n'));
-}
-async function signOutNow(){
-  if(fsPending||outbox.length){if(!confirm('Есть изменения, которые ещё не отправлены на сервер. Если выйти сейчас, они могут потеряться. Всё равно выйти?'))return}
-  try{localStorage.removeItem(CACHE_KEY);localStorage.removeItem(OUT_KEY)}catch(e){}
-  try{if(window.__auth)await window.__auth.signOut()}catch(e){}
-  location.reload();
-}
-
-/* backup: everything the app knows, as one file */
-function normalizeTask(t){
-  const kind=KINDS[t.kind]?t.kind:'full';const st=Math.max(0,Math.min(6,Math.round(Number(t.stage)||0)));
-  return {id:String(t.id).replace(/[\/\s]/g,'_'),title:String(t.title||'').trim()||'Без названия',category:String(t.category||''),kind,
-    variants:Math.max(1,Math.round(Number(t.variants)||1)),slides:Math.max(0,Math.round(Number(t.slides)||0)),
-    deadline:t.deadline||null,priority:['normal','high','low'].includes(t.priority)?t.priority:'normal',stage:normalizeStage(kind,st),
-    deliveredAt:t.deliveredAt||null,notes:String(t.notes||''),createdAt:t.createdAt||new Date().toISOString(),updatedAt:t.updatedAt||new Date().toISOString(),example:!!t.example};
-}
-function exportBackup(){
-  const data={app:'slide-uchet',version:1,exportedAt:new Date().toISOString(),tasks:tasks.map(t=>Object.assign({},t)),categories:{list:catList(),colors:catColors}};
-  const name=`slide-uchet-${today()}.json`,blob=new Blob([JSON.stringify(data,null,1)],{type:'application/json'});
-  let file=null;try{file=new File([blob],name,{type:'application/json'})}catch(e){}
-  if(file&&navigator.canShare&&navigator.canShare({files:[file]})&&matchMedia('(pointer:coarse)').matches){
-    navigator.share({files:[file],title:'Слайд-учёт: резервная копия'}).catch(()=>{});return;
+  try{cap=window.claude&&window.claude.use?await window.claude.use('db'):null}catch(e){cap=null}
+  if(cap){
+    db=cap;
+    db.collection('tasks').onSnapshot(snap=>{
+      tasks=overlayTasks(snap.docs.filter(d=>d.exists).map(d=>Object.assign({id:d.id},d.data())));
+      loaded=true;saveCache();updateSync();render();
+    },err=>{
+      if(!cached){loadLocal()}
+      loaded=true;setSync('pending','нет связи · показываю сохранённое, изменения отправлю позже');render();
+    });
+    db.doc('settings/categories').onSnapshot(snap=>{
+      const d=pendingCats()||(snap.exists?snap.data():null);
+      categories=d&&Array.isArray(d.list)&&d.list.length?d.list.map(String):null;
+      catColors=d&&d.colors&&typeof d.colors==='object'?d.colors:{};
+      saveCache();render();if($('#dlg').open)renderCatChips();
+    },()=>{});
+    flush();
+  }else if(!cached){
+    loadLocal();loaded=true;setSync('off','данные только в этом браузере');render();
+  }else{
+    setSync('off','нет связи · показываю сохранённое');render();
   }
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
-  toast(`Резервная копия сохранена: ${cnt(tasks.length,'tasks')}`);
-}
-function restoreBackup(d){
-  const list=Array.isArray(d)?d:(d&&d.tasks);
-  if(!Array.isArray(list)||!list.length){toast('В файле нет заданий');return}
-  const clean=list.filter(t=>t&&t.id&&t.title).map(normalizeTask);
-  if(!clean.length){toast('В файле нет заданий');return}
-  if(!confirm(`В резервной копии ${cnt(clean.length,'tasks')}. Загрузить их в приложение? Задания, которые уже есть, обновятся, остальные добавятся.`))return;
-  const c=d&&d.categories;
-  if(c&&Array.isArray(c.list))saveCats(catList().concat(c.list.map(String)),Object.assign({},catColors,c.colors&&typeof c.colors==='object'?c.colors:{}));
-  persistMany(clean);$('#impDlg').close();
-  toast(`Загружено из копии: ${cnt(clean.length,'tasks')}`);
 }
 
 /* derived */
@@ -990,10 +849,9 @@ function renderMain(){
   renderFilters();if(listView==='done')$('#filters').hidden=true;
   renderedKeys=[];
   if(!loaded){list.innerHTML='<div class="empty">Загружаю задания…</div>';return}
-  const warn=dbError?`<div class="banner bad"><b>${dbError==='permission-denied'?'База не даёт доступ':'Ошибка базы: '+esc(dbError)}</b>${dbError==='permission-denied'?'Проверь в консоли Firebase, что правила Firestore опубликованы, и что ты вошла тем же аккаунтом, что и на другом устройстве. Пункт «Проверить связь с базой» в меню покажет подробности.':'Нажми в меню «Проверить связь с базой» и пришли, что там написано.'}</div>`:'';
-  if(listView==='active')list.innerHTML=warn+renderActive();
-  else if(listView==='reserve')list.innerHTML=warn+renderReserve();
-  else list.innerHTML=warn+renderDone();
+  if(listView==='active')list.innerHTML=renderActive();
+  else if(listView==='reserve')list.innerHTML=renderReserve();
+  else list.innerHTML=renderDone();
   const ca=$('#collapseAll');ca.hidden=!renderedKeys.length;
   ca.textContent=renderedKeys.length&&renderedKeys.every(k=>collapsed.has(k))?'развернуть все':'свернуть все';
 }
@@ -1325,7 +1183,7 @@ const IMP_HEAD=[
   ['kind',/^(тип|вид)( работ[а-яё]*| задани[а-яё]*)?\??$|дизайн (готов|нужен|есть)|готов[а-яё]* дизайн|^дизайн\??$/],
   ['priority',/срочн|приорит/],['category',/категор|тип товара|группа|раздел/],['title',/назван|наимен|товар|продукт|издели|модель/]];
 let imp={rows:[],hasHeader:false,map:[],cat:'',sheets:null};
-function loadXLSX(){return new Promise((res,rej)=>{if(window.XLSX)return res(window.XLSX);const sc=document.createElement('script');sc.src='vendor/xlsx.full.min.js';sc.onload=()=>window.XLSX?res(window.XLSX):rej(new Error('no XLSX'));sc.onerror=()=>rej(new Error('load'));document.head.appendChild(sc)})}
+function loadXLSX(){return new Promise((res,rej)=>{if(window.XLSX)return res(window.XLSX);const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';sc.onload=()=>window.XLSX?res(window.XLSX):rej(new Error('no XLSX'));sc.onerror=()=>rej(new Error('load'));document.head.appendChild(sc)})}
 function splitLine(line,d){
   const out=[];let cur='',q=false;
   for(let i=0;i<line.length;i++){const ch=line[i];
@@ -1480,7 +1338,6 @@ function impStart(rows){
 async function impReadFile(file){
   $('#impFileName').textContent=file.name;
   try{
-    if(/\.json$/i.test(file.name)){restoreBackup(JSON.parse(await file.text()));return}
     if(/\.(csv|txt|tsv)$/i.test(file.name)){impStart(parseText(await file.text()));return}
     const X=await loadXLSX();
     const wb=X.read(await file.arrayBuffer(),{type:'array',cellDates:true});
@@ -1543,18 +1400,6 @@ function bind(){
   $('#fab').addEventListener('click',()=>openDialog(null));
   $('#catsBtn').addEventListener('click',openCats);
   $('#impBtn').addEventListener('click',openImport);
-  $('#expBtn').addEventListener('click',exportBackup);
-  $('#signOutBtn').addEventListener('click',signOutNow);
-  $('#diagBtn').addEventListener('click',runDiag);
-  const menu=$('#menu'),menuBtn=$('#menuBtn');
-  const setMenu=open=>{menu.hidden=!open;menuBtn.setAttribute('aria-expanded',String(open))};
-  menuBtn.addEventListener('click',e=>{e.stopPropagation();setMenu(menu.hidden)});
-  menu.addEventListener('click',e=>{if(e.target.closest('.mi'))setMenu(false)});
-  document.addEventListener('click',e=>{if(!menu.hidden&&!e.target.closest('.menu-wrap'))setMenu(false)});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
-  $('#authForm').addEventListener('submit',e=>{e.preventDefault();authRun('in')});
-  $('#authUp').addEventListener('click',()=>authRun('up'));
-  $('#authReset').addEventListener('click',()=>authRun('reset'));
   const idlg=$('#impDlg');
   idlg.querySelectorAll('[data-close-imp]').forEach(b=>b.addEventListener('click',()=>idlg.close()));
   idlg.addEventListener('click',e=>{if(e.target===idlg)idlg.close()});
@@ -1633,11 +1478,6 @@ function bind(){
   $('#groupSel').addEventListener('change',e=>{groupMode=GROUP_DIMS[e.target.value]?e.target.value:'urgency';savePrefs();render()});
   $('#sortSel').addEventListener('change',e=>{sortMode=SORTS.includes(e.target.value)?e.target.value:'urgency';savePrefs();render()});
 }
-window.__toast=toast;
 init();
-if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(()=>{});
 })();
 </script>
-<script type="module" src="store.js"></script>
-</body>
-</html>
